@@ -1,0 +1,850 @@
+/* 공통 */
+@font-face {
+    font-family: 'NotoSansCJKkr-Regular';
+    src: url("font/NotoSansCJKkr-Regular.otf") format("opentype");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: NotoSansCJKkr-Regular;
+}
+
+body {
+    overflow-x: hidden;
+    /* X축 스크롤바 없애기 */
+    background-color: #ffffff
+}
+
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+}
+
+.inner {
+    width: 1280px;
+    margin: 0 auto
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
+#wrap {
+    width: 100%;
+}
+
+
+/* 상단 */
+/* 위쪽상단 */
+
+.top_header {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 13px;
+    background-color: #457cbf;
+}
+
+.top_header > .inner:after {
+    display: inline-block;
+    content: "";
+    clear: both
+}
+
+.site {
+    width: 274px;
+    float: left;
+    color: #292929;
+    font-weight: bold
+}
+
+.site > li {
+    float: left;
+    width: 32.9%;
+    background-color: #b4c5cd;
+    border-right: 1px solid #a4b7c0;
+}
+
+.site:after {
+    display: inline-block;
+    content: "";
+    clear: both
+}
+
+.site > li:nth-child(1) {
+    background-color: #eff9fa;
+}
+
+.site > li:nth-child(3) > select {
+    width: 100%;
+    height: 38px;
+    border: none;
+    background-color: #b4c5cd;
+    color: #292929;
+    font-weight: bold
+}
+
+.util {
+    width: 310px;
+    float: right;
+    color: #fff;
+}
+
+.util > li {
+    width: 25%;
+    float: left;
+
+}
+
+.util:after {
+    display: inline-block;
+    content: "";
+    clear: both
+}
+
+.util > li:before {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #e1e1e1;
+    margin: 0 10px 0 0
+}
+
+.util > li:nth-child(1):before {
+    display: none
+}
+
+.util > li:nth-child(1) {
+    width: 16%;
+    padding-left: 9%
+}
+
+/* 아래쪽상단 */
+.bottom_header {
+    width: 100%;
+    height: 92px;
+    line-height: 92px;
+    text-align: center;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+    font-size: 15px;
+    background-color: #e1f3f4
+}
+
+.bottom_header > .inner:after {
+    display: inline-block;
+    content: "";
+    clear: both
+}
+
+.menu {
+    width: 480px;
+    height: 50px;
+    margin-top: 21px;
+    float: left
+}
+
+.menu > li {
+    float: left;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    position: relative;
+}
+
+.menu > li:hover {
+    background-color: #77a2d7;
+}
+
+.menu > li > a {
+    color: #292929;
+}
+
+.menu > li > a:hover {
+    color: #fff;
+}
+
+.menu:after {
+    display: inline-block;
+    content: "";
+    clear: both
+}
+
+.menu > li:first-child {
+    padding-left: 0
+}
+
+.menu > li:last-child {
+    padding: 0
+}
+
+.submenu {
+    position: absolute;
+    top: 50px; /* li의 높이 */
+    /*바뀌는곳*/
+    left: 0;
+    background-color: rgba(189, 210, 236, 1);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+/*추가되는곳*/
+.submenu > ul {
+    width: 120px; /* 상위 메뉴 너비와 같게 */
+    float: left;
+}
+
+/*바뀌는곳*/
+.submenu > ul > li {
+    transition: all 0.5s
+}
+
+.submenu > ul > li > a {
+    color: #505050;
+    font-size: 14px;
+}
+
+.menu > li:hover .submenu {
+    opacity: 1;
+    /*바뀌는곳*/
+    z-index: 999
+}
+
+.submenu > ul > li:hover {
+    background-color: #77a2d7;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+.menu a:focus {
+    color: #d13d47;
+}
+
+.logo {
+    position: absolute;
+    width: 196px;
+    left: 15%;
+    right: 15%;
+    margin: 0 auto;
+    top: 2%
+}
+
+.sub_menu {
+    float: right
+}
+
+.sub_menu:after {
+    display: inline-block;
+    content: "";
+    clear: both
+}
+
+.sub_menu > .side {
+    width: 191px;
+    float: left
+}
+
+.sub_menu > .side > li {
+    float: left;
+    width: 45%;
+    height: 27px;
+    margin-right: 5%;
+    margin-top: 15%;
+    display: inline-block;
+    border: 1px solid #292929;
+    border-radius: 50px;
+    font-weight: bold;
+    line-height: 27px;
+}
+
+.sub_menu > .side:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+.sub_menu > .side > li:last-child {
+    margin-right: 0;
+}
+
+.sub_menu > .search {
+    float: left;
+    padding: 0 30px
+}
+
+.sub_menu > .m_menu {
+    float: left
+}
+
+
+
+
+/* sub - 메인이미지 */
+#sub_mainimg {
+    width: 100%;
+    height: 460px;
+    background-image: url(../images/sub_main_img.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+#sub_mainimg > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 60%;
+}
+
+#sub_mainimg > h2 {
+    font-size: 42px;
+    font-weight: bold;
+    padding: 75px 0 28px;
+}
+
+#sub_mainimg > p {
+    font-size: 18px;
+}
+
+
+/* 서브페이지 콘텐츠 타이틀 */
+#sub_contents {
+    width: 100%;
+}
+
+.subpage_title {
+    width: 1280px;
+    height: 100px;
+    margin: 220px auto 70px;
+    text-align: center;
+    color: #292929;
+}
+
+.subpage_title > h2 {
+    font-size: 30px;
+    ;
+    font-weight: bold;
+    padding-bottom: 24px;
+}
+
+.subpage_title > .txt_two{
+    font-size: 14px;
+}
+
+.subpage_title > .txt_three{
+    display: none;
+}
+
+/* 입퇴원수속창구 근무시간 */
+.time {
+    width: 1280px;
+    height: 203px;
+    margin: 0 auto;
+}
+
+.time > h3 {
+    font-size: 23px;
+    color: #5b5b5b;
+}
+
+.time > .time_box {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 73px;
+}
+
+.time > .time_box > .box_t {
+    width: 100%;
+    height: 73px;
+    background-color: #f9fafa;
+    border-top: 2px solid #292929;
+    font-size: 16px;
+    color: #5b5b5b;
+    font-weight: bold;
+}
+
+.time > .time_box > .box_t > ul:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+.time > .time_box > .box_t > ul > li {
+    float: left;
+    width: 32.9%;
+    border-right: 1px solid #c2c2c2;
+}
+
+.time > .time_box > .box_t > ul > li:last-child {
+    border-right: none;
+}
+
+.time > .time_box > .box_b {
+    width: 100%;
+    height: 73px;
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+    font-size: 12px;
+    color: #292929;
+    font-weight: bold;
+}
+
+.time > .time_box > .box_b > ul:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+.time > .time_box > .box_b > ul > li {
+    float: left;
+    width: 32.9%;
+    border-right: 1px solid #c2c2c2;
+}
+
+.time > .time_box > .box_b > ul > li:last-child {
+    border-right: none;
+}
+
+/* 입원절차 */
+.course {
+    width: 1280px;
+    height: 800px;
+    margin: 75px auto 0;
+}
+
+.course > h3 {
+    font-size: 23px;
+    color: #5b5b5b;
+}
+
+.course > .course_box {
+    margin-top: 20px;
+    width: 100%;
+    height: 578px;
+    border: 2px solid #cdcdcd;
+    text-align: center;
+}
+
+.course > .course_box > ul{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+.course > .course_box > ul:after{
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+.course > .course_box > ul > li{
+    float: left;
+    width: 33.3%;
+    margin-top: 20px;
+}
+.course > .course_box > ul > li > i{
+    margin: 0 auto;
+}
+.course > .course_box > ul > li > h4{
+    margin-top: 22px;
+    font-size: 25px;
+    color: #5b5b5b;
+}
+.course > .course_box > ul > li > p{
+    margin-top: 17px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #5b5b5b;
+    letter-spacing: -1px;
+}
+.course > .course_box > .box_t > ul > li > h4 {
+    margin-top: 22px;
+    font-size: 25px;
+    color: #5b5b5b;
+}
+
+.course > .course_box > .box_t > ul > li > p {
+    margin-top: 17px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #5b5b5b;
+    letter-spacing: -1px;
+}
+
+.course > .down_set {
+    width: 100%;
+    height:150px;
+    position: relative;
+}
+
+.course > .down_set > .download {
+    position: absolute;
+    width: 265px;
+    height: 60px;
+    left: 10%;
+    right: 10%;
+    margin: 0 auto;
+    top: 20%;
+    background-color: #2fb4c8;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+}
+
+
+
+
+/* 하단 */
+#footer {
+    width: 100%;
+    height: 295px;
+    background-color: #457cbf
+}
+
+/* 하단위쪽 */
+.top_footer {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #2c517e;
+    font-size: 15px;
+    color: #fff;
+}
+
+.top_footer > .inner > ul:after {
+    content: "";
+    display: inline-block;
+    clear: both
+}
+
+.top_footer > .inner > ul > li {
+    float: left;
+    padding-right: 30px
+}
+
+.top_footer > .inner > ul > li:nth-child(2) {
+    color: #0f1a28;
+    font-weight: bold;
+}
+
+.top_footer > .inner > p {
+    display: none;
+}
+
+/* 하단아래쪽 */
+.bottom_footer {
+    color: #fff;
+    padding-top: 32px;
+    font-size: 14px;
+}
+
+.bottom_footer > .inner:after {
+    content: "";
+    display: inline-block;
+    clear: both
+}
+
+.bottom_footer > .inner > .f_logo,
+.copyright {
+    float: left
+}
+
+.bottom_footer > .inner > .info {
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.bottom_footer > .inner > .f_logo {
+    padding: 0 77px 0 35px;
+}
+
+.bottom_footer > .inner > .copyright > p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.bottom_footer > .inner > .info > p {
+    text-align: right;
+}
+
+.bottom_footer > .inner > .info > p > span {
+    font-size: 24px;
+    padding-right: 15px;
+}
+
+.bottom_footer > .inner > .info > ul {
+    width: 370px;
+}
+
+.bottom_footer > .inner > .info > ul:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+.bottom_footer > .inner > .info > ul > li {
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+}
+
+.bottom_footer > .inner > .info > ul > li:last-child {
+    margin-right: 0;
+}
+
+.bottom_footer > .inner > .info > ul > li > select {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #fff;
+    line-height: 40px;
+    text-align: center;
+    background-color: #457cbf;
+    color: #fff;
+}
+
+
+
+/* 미디어쿼리 */
+
+@media (max-width:1279px) {
+    .inner {
+        width: 100%
+    }
+    #header {
+        position: relative;
+        height: 132px;
+    }
+    .top_header {
+        display: none
+    }
+    .bottom_header {
+        border-bottom: 0;
+        height: 132px;
+    }
+    .menu {
+        float: none;
+        margin: 0 auto;
+        padding-top: 60px
+    }
+    .sub_menu > .side {
+        display: none
+    }
+    .sub_menu > .search {
+        float: none;
+        position: absolute;
+        top: 5%;
+        right: 2%;
+    }
+    .sub_menu > .m_menu {
+        float: none;
+        position: absolute;
+        top: 5%;
+        left: 2%;
+    }
+    
+    
+    /*서브*/
+    .subpage_title {
+        width: 90%;
+    }
+    .time {
+        width: 90%;
+    }
+    .course {
+        width: 90%;
+        height: 1000px;
+    }
+    .course > .course_box{
+        height: 780px;
+    }
+    .course > .course_box > ul{
+        width: 100%;
+    }
+    .course > .course_box > ul > li{
+        width: 50%;
+        height: 202px;
+    }
+    
+    
+    
+    .top_footer {
+        border: 0;
+        padding-top: 2%
+    }
+    .top_footer > .inner > ul > li {
+        width: 33.3%;
+        text-align: center;
+        line-height: normal;
+        padding-right: 0;
+        margin: 5px 0;
+    }
+    .bottom_footer {
+        position: relative;
+        padding-top: 5%;
+    }
+    .bottom_footer > .inner > .f_logo {
+        width: 30%;
+        padding: 0 0 0 10%;
+    }
+    .bottom_footer > .inner > .copyright {
+        width: 60%;
+    }
+    .bottom_footer > .inner > .info {
+        float: left;
+        width: 60%;
+        padding-top: 10px;
+        padding-left: 40%;
+    }
+    .bottom_footer > .inner > .info > p {
+        text-align: left;
+    }
+    .bottom_footer > .inner > .info > ul {
+        display: none;
+    }    
+    
+}
+
+
+
+
+@media (max-width:768px) {
+    .menu {
+        display: none;
+    }
+    
+    
+    /*서브*/
+    #sub_mainimg > h2{
+        font-size: 35px;
+        padding-top: 50px;
+    }
+    #sub_mainimg > p{
+        font-size: 16px;
+    }
+    #sub_mainimg > img{
+        top: 55%;
+        width: 100%;
+    }
+    #sub_contents{
+        height: auto;
+    }
+    .subpage_title{
+        margin-top: 300px;
+        height: 150px;
+    }
+    .subpage_title > .txt_two{
+        display: none;
+    }
+    .subpage_title > .txt_three{
+        display: inline-block;
+        font-size: 14px;
+    }
+    .time{
+        height: auto;
+    }
+    .time > h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .time > .time_box{
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        margin-top: 30px;
+        height: 220px;
+        border-top: 2px solid #292929;
+        border-bottom: 2px solid #292929;
+    }
+    .time > .time_box > .box_t {
+        width: 49.5%;
+        height: 220px;
+        float: left;
+        border-top: 0;
+        border-right: 1px solid #c2c2c2;
+        font-size: 16px;
+    }
+    .time > .time_box > .box_b{
+        width: 50%;
+        height: 220px;
+        float: right;
+        border: 0;
+        font-size: 16px;
+    }
+    .time > .time_box > .box_t > ul > li {
+        float: none;
+        width: 100%;
+    }
+    .time > .time_box > .box_t > ul > li:nth-child(2){
+        border-top: 1px solid #c2c2c2;
+        border-bottom: 1px solid #c2c2c2;
+    }
+    .time > .time_box > .box_b > ul > li{
+        float: none;
+        width: 100%;
+        border-right:0;
+    }
+    .time > .time_box > .box_b > ul > li:nth-child(2){
+        border-top: 1px solid #c2c2c2;
+        border-bottom: 1px solid #c2c2c2;
+    }
+    .course{
+        height: 1470px;
+    }
+    .course > h3{
+        font-size: 20px;
+        text-align: center;
+    }
+    .course > .course_box{
+        height: 1270px;
+        margin-top: 30px;
+    }
+    .course > .course_box > ul > li{
+        width: 100%;
+        margin-top: 10px;
+        height: 190px;
+    }
+    .course > .course_box > ul > li > h4{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .course > .course_box > ul > li > p{
+        font-size: 16px;
+        margin-top: 5px;
+        font-weight: 100;
+    }
+    .course > .down_set{
+        height: 200px;
+    }
+    .course > .down_set > .download{
+        width: 100%;
+        left: 0;
+        right: 0;
+    }  
+    #footer {
+        height: 200px
+    }
+    .top_footer {
+        display: none
+    }
+    .bottom_footer > .inner > .f_logo {
+        padding-left: 5%;
+        width: 25%;
+    }
+    .bottom_footer > .inner > .info {
+        padding-left: 30%;
+    }
+}
